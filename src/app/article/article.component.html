@@ -1,0 +1,10 @@
+<a class="panel panel-default">
+    <h3>{{article.title}}</h3>
+    <div>
+        <div class="panel-body">
+            <a href="#">{{article.link}}</a>
+        </div>
+        <div class="panel-body">{{article.votes}}</div>
+        <button class="btn" (click)="voteUp(article)">+</button>
+        <button class="btn" (click)="voteDown(article)">-</button>
+    </div>

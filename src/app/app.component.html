@@ -1,5 +1,19 @@
-<h1>
-    {{title}}
-</h1>
-
-<app-user-list></app-user-list>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Reddit</h1>
+    </div>
+    <div>
+        <form>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="title" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Enter Title" #newTitle>
+            </div>
+            <div class="form-group">
+                <label for="Link">Link</label>
+                <input type="link" class="form-control" id="link" placeholder="Link" #newLink>
+            </div>
+            <button type="button" (click)='addNewArticle(newTitle, newLink)' class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <app-article *ngFor="let article of sortedArticle()" [article]="article"></app-article>
+</div>
